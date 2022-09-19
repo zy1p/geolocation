@@ -17,6 +17,10 @@ export default function Index({
   country,
   currencyCode,
   currencySymbol,
+  ip,
+  latitude,
+  longitude,
+  timezone,
 }) {
   name = decodeURIComponent(name)
   city = decodeURIComponent(city)
@@ -102,6 +106,34 @@ export default function Index({
                 <strong>{'x-vercel-ip-country: '}</strong>
                 {country}
               </p>
+
+              {latitude && (
+                <p>
+                  <strong>{'x-vercel-ip-latitude: '}</strong>
+                  {latitude}
+                </p>
+              )}
+
+              {longitude && (
+                <p>
+                  <strong>{'x-vercel-ip-longitude: '}</strong>
+                  {longitude}
+                </p>
+              )}
+
+              {timezone && (
+                <p>
+                  <strong>{'x-vercel-ip-timezone: '}</strong>
+                  {timezone}
+                </p>
+              )}
+
+              {ip && (
+                <p>
+                  <strong>{'x-real-ip: '}</strong>
+                  {ip}
+                </p>
+              )}
             </pre>
           </div>
         </section>
